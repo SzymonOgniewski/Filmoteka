@@ -1,0 +1,16 @@
+$color: (
+  'brand-color-orange': #ff6b01,
+  'text-color-dark': #000000,
+  'text-color-light': #ffffff,
+);
+@function getColor($key) {
+  @return map-get($color, $key);
+}
+
+$fontfamily: (
+  'brand-font': 'Roboto',
+  'sans-serif': sans-serif,
+);
+@function getFF($key) {
+  @return map-get($fontfamily, $key);
+}

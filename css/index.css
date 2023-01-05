@@ -1,1 +1,28 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';/*# sourceMappingURL=index.css.map */
+@import '~node_modules/modern-normalize/modern-normalize.css';
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav--item:not(:last-child) {
+  padding-right: 39px;
+}
+.header__brand {
+  display: flex;
+}
+.header__brand--logo {
+  width: 40px;
+  height: 40px;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,28 @@
+.footer {
+  background: getColor(background-color-grey);
+  display: flex;
+  height: 100px;
+  align-items: center;
+  &__content {
+    font-size: 14px;
+    line-height: calc(16.41 / 14);
+    text-align: center;
+    color: getColor(text-color-grey);
+    &--btn {
+      background-color: transparent;
+      border: none;
+      text-decoration: underline;
+      text-decoration-thickness: 0.75px;
+      color: getColor(text-color-grey);
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    height: 77px;
+    &__content {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

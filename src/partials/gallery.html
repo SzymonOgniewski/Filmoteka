@@ -1,16 +1,25 @@
-<header>
+<header class="header-background">
   <div class="container">
     <div class="header">
-      <div class="header__brand">
-        <svg class="header__brand--logo"><use></use></svg>
+      <a class="header__brand" href="">
+        <svg class="header__brand--logo">
+          <use href="./images/symbol-defs.svg#icon-film"></use>
+        </svg>
         <p class="header__brand--name">Filmoteka</p>
-      </div>
+      </a>
       <nav class="header__nav">
-        <a href="" class="header__nav--item">Home</a>
+        <a href="" class="header__nav--item current">Home</a>
         <a href="" class="header__nav--item">My Library</a>
       </nav>
     </div>
-    <input class="search-input" placeholder="Search" />
+    <form class="search-form">
+      <input class="search-form__input" placeholder="Search" />
+      <button type="submit" class="submit-btn">
+        <svg class="submit-btn__icon">
+          <use href="./images/symbol-defs.svg#icon-search"></use>
+        </svg>
+      </button>
+    </form>
   </div>
 </header>
 <main>
@@ -18,4 +27,20 @@
     <div class="gallery"></div>
   </div>
 </main>
-<footer></footer>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <p>&#169; 2020 | All Rights Reserved |</p>
+      <p>
+        Developed with
+        <svg width="14px" height="12.75px">
+          <use href="./images/symbol-defs.svg#icon-heart"></use>
+        </svg>
+        by
+        <button type="button" class="footer__content--btn">
+          GoIT Students
+        </button>
+      </p>
+    </div>
+  </div>
+</footer>

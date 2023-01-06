@@ -2,6 +2,8 @@ $color: (
   'brand-color-orange': #ff6b01,
   'text-color-dark': #000000,
   'text-color-light': #ffffff,
+  'text-color-grey': #545454,
+  'background-color-grey': #f7f7f7,
 );
 @function getColor($key) {
   @return map-get($color, $key);

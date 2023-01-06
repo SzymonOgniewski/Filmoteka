@@ -200,39 +200,23 @@ body {
     justify-content: center;
   }
 }
-.header {
+.buttons {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 46px;
-  padding-bottom: 43px;
-}
-.header__nav {
-  padding-top: 12px;
-}
-.header__nav--item {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.1716666667;
-}
-.header__nav--item:not(:last-child) {
-  margin-right: 39px;
-}
-.header__brand {
-  display: flex;
-}
-.header__brand--logo {
-  width: 24px;
-  height: 24px;
-}
-.header__brand--name {
-  display: none;
+  gap: 20px;
+  justify-content: center;
 }
 
-.current {
-  border-bottom: 3px solid #ff6b01;
+.library-btn {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3333333333;
+  text-align: center;
+  width: 130px;
+  height: 44px;
+  border-radius: 5px;
+  color: #ffffff;
+  background: transparent;
+  border: solid 1px #ffffff;
 }
 
 .library-background {
@@ -247,66 +231,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library-mobile@2x.jpg);
   }
 }
-.search-form {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-.search-form__input {
-  font-size: 14px;
-  line-height: 1.1721428571;
-  outline: none;
-  min-width: 280px;
-  border: none;
-  color: #ffffff;
-  background: transparent;
-  border-bottom: 0.5px solid #ffffff;
-  height: 20px;
-}
-.search-form__input::-moz-placeholder {
-  color: #ffffff;
-}
-.search-form__input:-ms-input-placeholder {
-  color: #ffffff;
-}
-.search-form__input::placeholder {
-  color: #ffffff;
-}
-
-.submit-btn {
-  margin-left: -20px;
-  width: 20px;
-  height: 20px;
-  border: none;
-  background: transparent;
-}
-.submit-btn__icon {
-  width: 12px;
-  height: 12px;
-}
-
 @media screen and (min-width: 768px) {
-  .header {
-    padding-top: 41px;
-    padding-bottom: 37px;
-  }
-  .header__nav {
-    padding-top: 17px;
-  }
-  .header__brand {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-  .header__brand--name {
-    color: #ffffff;
-    font-size: 30px;
-    line-height: 1.172;
-    display: block;
-  }
   .library-background {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library-tablet.jpg);
     background-size: cover;
@@ -317,11 +242,6 @@ body {
 @media screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .library-background {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library-tablet@2x.jpg);
-  }
-}
-@media screen and (min-width: 768px) {
-  .search-form__input {
-    min-width: 336px;
   }
 }
 @media screen and (min-width: 1024px) {

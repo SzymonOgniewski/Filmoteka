@@ -1,0 +1,86 @@
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.library-btn {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: calc(16 / 12);
+  text-align: center;
+  width: 130px;
+  height: 44px;
+  border-radius: 5px;
+  color: getColor(text-color-light);
+  background: transparent;
+  border: solid 1px getColor(text-color-light);
+}
+
+.library-background {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.56),
+      rgba(0, 0, 0, 0.56)
+    ),
+    url(../images/library-mobile.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 230px;
+}
+@media screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .library-background {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/library-mobile@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .library-background {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/library-tablet.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 230px;
+  }
+  @media screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .library-background {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url(../images/library-tablet@2x.jpg);
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .library-background {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/library-desktop.jpg);
+  }
+
+  @media screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .library-background {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url(../images/library-desktop@2x.jpg);
+    }
+  }
+}

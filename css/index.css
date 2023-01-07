@@ -12,14 +12,12 @@ body {
 .container {
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 320px;
 }
 
 @media screen and (min-width: 768px) {
   .container {
     padding-left: 76px;
     padding-right: 76px;
-    max-width: 768px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -32,9 +30,9 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding-top: 46px;
   padding-bottom: 43px;
+  text-align: -webkit-center;
 }
 .header__nav {
   padding-top: 12px;

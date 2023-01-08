@@ -25,7 +25,7 @@
     url(../images/library-mobile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 230px;
+  height: 230px;
 }
 @media screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .library-background {
@@ -46,9 +46,6 @@
         rgba(0, 0, 0, 0.56)
       ),
       url(../images/library-tablet.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 230px;
   }
   @media screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {

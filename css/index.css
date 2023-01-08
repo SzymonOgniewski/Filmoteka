@@ -28,8 +28,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  padding-top: 46px;
-  padding-bottom: 43px;
+  padding: 46px 0 43px 0;
 }
 .header__nav {
   padding-top: 12px;
@@ -63,7 +62,7 @@ body {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/home-mobile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 230px;
+  height: 230px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
@@ -81,7 +80,7 @@ body {
   font-size: 14px;
   line-height: 1.1721428571;
   outline: none;
-  min-width: 280px;
+  width: 280px;
   border: none;
   color: #ffffff;
   background: transparent;
@@ -112,8 +111,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .header {
-    padding-top: 41px;
-    padding-bottom: 37px;
+    padding: 41px 0 37px 0;
   }
   .header__nav {
     padding-top: 17px;
@@ -133,9 +131,6 @@ body {
   }
   .header-background {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/home-tablet.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 230px;
   }
 }
 @media screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {

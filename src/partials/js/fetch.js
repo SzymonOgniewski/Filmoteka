@@ -4,7 +4,7 @@ export { queryData };
 export { trendingData };
 
 const token = 'dd32b08009b8c26db83a645989914c74';
-
+const page = 1;
 async function genresData() {
   const response = await fetch(
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${token}&language=en-US`
@@ -25,10 +25,10 @@ async function movieData() {
   return await response.json();
 }
 
-async function queryData() {
+async function queryData(query) {
   const response = await fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${token}&query=${query}&page=${page}&language=en-US`
-  ); 
+  );
   if (!response.ok) {
     throw new Error(response.status);
   }
@@ -44,4 +44,3 @@ async function trendingData() {
   }
   return await response.json();
 }
-console.log(trendingData)

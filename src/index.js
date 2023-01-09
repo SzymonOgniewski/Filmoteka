@@ -1,4 +1,4 @@
-import { genresData } from "./js/fetch";
-import { movieData } from "./js/fetch";
-import { queryData } from "./js/fetch";
-import { trendingData } from "./js/fetch";
+import { genresData } from "./partials/js/fetch";
+import { movieData } from "./partials/js/fetch";
+import { queryData } from "./partials/js/fetch";
+import { trendingData } from "./partials/js/fetch";

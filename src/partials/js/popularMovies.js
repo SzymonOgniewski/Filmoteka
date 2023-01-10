@@ -1,40 +1,32 @@
 import { trendingData, genresData } from './fetch';
+import { showPagination } from './pagination';
 
-let page = 1;
 const moveList = document.querySelector('.gallery');
 
-const getGenresList = () => {
-  return genresData();
-};
-
-getGenresList();
-
-console.log(getGenresList());
-
-// console.log(
-//   '🚀 ~ file: popularMovies.js:16 ~ getGenresList()',
-//   getGenresList()
-// );
-
-const showPopularMovies = () => {
+const showPopularMovies = page => {
+  moveList.textContent = '';
   let markup = '';
-  trendingData(page).then(elm => {
+  trendingData(page).then(async elm => {
     let movies = elm.results;
-    movies.forEach(elm => {
+
+    let totalPages = elm.total_pages;
+    let genres = await genresData();
+
+    if (totalPages > 1) {
+      showPagination(page, totalPages);
+    }
+
+    movies.forEach(async elm => {
       const shortGenres = elm.genre_ids.splice(0, 2);
 
-      //   genresData().then(elm => {
-      //     let genres = elm.genres;
-      //     let moveGenresName = [];
-      //     shortGenres.forEach(ids => {
-      //       for (i = 0; i < genres.length; i++) {
-      //         if (ids === genres[i].id) {
-      //           moveGenresName.push(genres[i].name.toString());
-      //         }
-      //       }
-      //     });
-      //     genresStr = moveGenresName.toString().replaceAll(',', ', ');
-      //   });
+      let moveGenresName = [];
+      shortGenres.forEach(ids => {
+        for (i = 0; i < genres.length; i++) {
+          if (ids === genres[i].id) {
+            moveGenresName.push(genres[i].name);
+          }
+        }
+      });
 
       if (elm.poster_path === null) {
         elm.poster_path =
@@ -44,9 +36,13 @@ const showPopularMovies = () => {
       }
 
       markup += `<li class="move_gallery__item" data-movieid="${elm.id}">
-    <img class="move_gallery__image" src="${elm.poster_path}">
+    <img class="move_gallery__image" src="${
+      elm.poster_path
+    }" width="265" height="398">
      <div class="move_gallery__title">${elm.title}</div>
-     <div class="move_gallery__genres">genres | ${elm.release_date}</div>
+     <div class="move_gallery__genres">${moveGenresName
+       .toString()
+       .replaceAll(',', ', ')} | ${elm.release_date}</div>
      </li>`;
     });
 

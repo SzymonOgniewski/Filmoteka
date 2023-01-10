@@ -15,6 +15,7 @@
     font-weight: 500;
     line-height: 16px;
     font-size: 12px;
+    width: 265px;
   }
   &__image {
     width: 100%;
@@ -22,7 +23,11 @@
     border-radius: 5px;
   }
   &__title {
-    text-transform: Uppercase;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 265px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__genres {
     color: #ff6b08;

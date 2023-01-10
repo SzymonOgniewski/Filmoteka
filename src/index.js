@@ -8,11 +8,9 @@ getWatched();
 footerModal();
 
 window.addEventListener('load', e => {
-  showPopularMovies();
+  showPopularMovies(1);
 });
 
 const gallery = document.querySelector('.gallery');
 
 gallery.addEventListener('click', movieInfoModal);
-
-

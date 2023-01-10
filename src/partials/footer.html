@@ -8,10 +8,45 @@
           <use href="./images/symbol-defs.svg#icon-heart"></use>
         </svg>
         by
-        <button type="button" class="footer__content--btn">
+        <button type="button" class="footer__content--btn" data-modal-open>
           GoIT Students
         </button>
       </p>
+    </div>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="footer-modal">
+        <button class="footer-modal__close-btn" data-modal-close>
+          <svg width="20px" height="20px">
+            <use href="./images/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+        <ul class="contributors-list">
+          <h3 class="contributors-list__title">Contributors</h3>
+          <li class="contributors-list__item">
+            <p class="contributors-list__item--name">Olga</p>
+            <p class="contributors-list__item--role">Developer</p>
+          </li>
+
+          <li class="contributors-list__item">
+            <p class="contributors-list__item--name">Niedźwiedź</p>
+            <p class="contributors-list__item--role">Developer</p>
+          </li>
+          <li class="contributors-list__item">
+            <p class="contributors-list__item--name">Qudłaty</p>
+            <p class="contributors-list__item--role">Developer</p>
+          </li>
+          <li class="contributors-list__item">
+            <p class="contributors-list__item--name">Michał</p>
+            <p class="contributors-list__item--role">
+              Scrum master & developer
+            </p>
+          </li>
+          <li class="contributors-list__item">
+            <p class="contributors-list__item--name">Szymon</p>
+            <p class="contributors-list__item--role">Team leader & developer</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>

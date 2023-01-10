@@ -10,6 +10,7 @@
     text-align: center;
     color: getColor(text-color-grey);
     &--btn {
+      cursor: pointer;
       background-color: transparent;
       border: none;
       text-decoration: underline;

@@ -1,0 +1,9 @@
+.gallery-modal {
+  width: 280px;
+  background: #ffffff;
+  border-radius: 5px;
+  &__img {
+    width: 280px;
+    border-radius: 5px 5px 0px 0px;
+  }
+}

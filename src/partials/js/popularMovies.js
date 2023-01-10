@@ -20,7 +20,6 @@ const showPopularMovies = () => {
   let markup = '';
   trendingData(page).then(elm => {
     let movies = elm.results;
-
     movies.forEach(elm => {
       const shortGenres = elm.genre_ids.splice(0, 2);
 
@@ -44,7 +43,7 @@ const showPopularMovies = () => {
         elm.poster_path = `https://image.tmdb.org/t/p/w500//${elm.poster_path}`;
       }
 
-      markup += `<li class="move_gallery__item">
+      markup += `<li class="move_gallery__item" data-movieid="${elm.id}">
     <img class="move_gallery__image" src="${elm.poster_path}">
      <div class="move_gallery__title">${elm.title}</div>
      <div class="move_gallery__genres">genres | ${elm.release_date}</div>

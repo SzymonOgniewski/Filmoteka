@@ -157,6 +157,30 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 20px 0px;
+  justify-content: center;
+}
+
+.move_gallery {
+  padding: 20px 20px;
+}
+.move_gallery__item {
+  list-style: none;
+  padding-bottom: 20px;
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 12px;
+}
+.move_gallery__image {
+  width: 100%;
+  height: 398px;
+  border-radius: 5px;
+}
+.move_gallery__title {
+  text-transform: Uppercase;
+}
+.move_gallery__genres {
+  color: #ff6b08;
 }
 
 .footer {
@@ -173,6 +197,7 @@ body {
   color: #545454;
 }
 .footer__content--btn {
+  cursor: pointer;
   background-color: transparent;
   border: none;
   text-decoration: underline;
@@ -240,4 +265,78 @@ body {
   .library-background {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library-desktop@2x.jpg);
   }
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  transition: opacity 250ms linear, visibility 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms linear;
+  transform: scale(1);
+  z-index: 999;
+}
+
+.footer-modal {
+  z-index: 999;
+  position: absolute;
+  background-color: #f7f7f7;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 20 20px;
+  top: 50%;
+  left: 50%;
+  min-width: 280px;
+}
+.footer-modal__close-btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.contributors-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contributors-list__item {
+  border-bottom: 1px solid #ff6b01;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.contributors-list__item--name {
+  font-size: 24px;
+  color: black;
+}
+.contributors-list__item--role {
+  color: #545454;
+}
+.contributors-list__title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.gallery-modal {
+  width: 280px;
+  background: #ffffff;
+  border-radius: 5px;
+}
+.gallery-modal__img {
+  width: 280px;
+  border-radius: 5px 5px 0px 0px;
 }/*# sourceMappingURL=index.css.map */

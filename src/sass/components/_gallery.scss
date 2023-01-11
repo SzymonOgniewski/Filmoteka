@@ -16,6 +16,11 @@
     line-height: 16px;
     font-size: 12px;
     width: 265px;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.05);
+      transition: transform ease 0.3s;
+    }
   }
   &__image {
     width: 100%;

@@ -102,9 +102,9 @@ const showPagination = (currPage, totalPages) => {
   });
 
   lastBtn.addEventListener('click', e => {
-    lastPage = lastBtn.value;
+    currentPage = lastBtn.value;
 
-    showPopularMovies(lastPage);
+    showPopularMovies(currentPage);
   });
 
   plusOneBtn.addEventListener('click', e => {

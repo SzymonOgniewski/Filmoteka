@@ -2,6 +2,8 @@ import { showPopularMovies } from './popularMovies';
 
 const pagination = document.querySelector('.pagination-container');
 
+let currentPage;
+
 const showPagination = (currPage, totalPages) => {
   currentPage = Number(currPage);
   let pageMinusTwo = currentPage - 2;

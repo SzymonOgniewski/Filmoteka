@@ -341,6 +341,14 @@ body {
   background: #ffffff;
   border-radius: 5px;
   padding: 48px 20px 41px 20px;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+}
+.gallery-modal__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.172;
+  color: #000000;
 }
 .gallery-modal__close-btn {
   width: 20px;
@@ -348,10 +356,68 @@ body {
   position: absolute;
   top: 15px;
   right: 10px;
+  background-image: url("../images/close.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
 }
 .gallery-modal__img {
   width: 240px;
   border-radius: 5px 5px 0px 0px;
+}
+.gallery-modal__about {
+  padding: 20px 0 10px 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3333333333;
+}
+.gallery-modal__overview {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6666666667;
+  padding: 0 0 21px 0;
+}
+
+.table-data__row:not(:last-child) {
+  padding: 0 0 10px 0;
+}
+.table-data__name {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3333333333;
+  color: #545454;
+  width: 100px;
+}
+.table-data__value {
+  font-size: 12px;
+  line-height: 1.3333333333;
+  color: #000000;
+  font-weight: 500;
+}
+
+.rating {
+  padding: 0 5px;
+  background-color: #ff6b01;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.modal-ls-btn {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3333333333;
+  text-align: center;
+  width: 112.58px;
+  height: 44px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.ls-marked {
+  background-color: #ff6b01;
+  color: #ffffff;
+  border: none;
 }
 
 .pagination-container {

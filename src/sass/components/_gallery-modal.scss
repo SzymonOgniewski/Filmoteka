@@ -3,15 +3,82 @@
   background: #ffffff;
   border-radius: 5px;
   padding: 48px 20px 41px 20px;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: calc(23.44 / 20);
+    color: getColor(text-color-dark);
+  }
   &__close-btn {
     width: 20px;
     height: 20px;
     position: absolute;
     top: 15px;
     right: 10px;
+    background-image: url('../images/close.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
   }
   &__img {
     width: 240px;
     border-radius: 5px 5px 0px 0px;
   }
+  &__about {
+    padding: 20px 0 10px 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: calc(16 / 12);
+  }
+  &__overview {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: calc(20 / 12);
+    padding: 0 0 21px 0;
+  }
+}
+
+.table-data {
+  &__row:not(:last-child) {
+    padding: 0 0 10px 0;
+  }
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: calc(16 / 12);
+    color: getColor(text-color-grey);
+    width: 100px;
+  }
+  &__value {
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    color: getColor(text-color-dark);
+    font-weight: 500;
+  }
+}
+
+.rating {
+  padding: 0 5px;
+  background-color: getColor(brand-color-orange);
+  color: getColor(text-color-light);
+  border-radius: 5px;
+}
+
+.modal-ls-btn {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: calc(16 / 12);
+  text-align: center;
+  width: 112.58px;
+  height: 44px;
+  border-radius: 5px;
+  background: transparent;
+}
+.ls-marked {
+  background-color: getColor(brand-color-orange);
+  color: getColor(text-color-light);
+  border: none;
 }

@@ -2,7 +2,7 @@ import { showPopularMovies } from './popularMovies';
 
 const pagination = document.querySelector('.pagination-container');
 
-let currentPage, newPage;
+let currentPage;
 
 const showPagination = (currPage, totalPages) => {
   currentPage = Number(currPage);
@@ -132,17 +132,17 @@ const previousPage = currentPage => {
   if (currentPage === 1) {
     return;
   }
-  newPage = currentPage - 1;
-  showPopularMovies(newPage);
+  currentPage = currentPage - 1;
+  showPopularMovies(currentPage);
 };
 
 const nextPage = (currentPage, totalPages) => {
   if (currentPage === totalPages) {
     return;
   }
-  newPage = currentPage + 1;
+  currentPage = currentPage + 1;
 
-  showPopularMovies(newPage);
+  showPopularMovies(currentPage);
 };
 
 export { showPagination };

@@ -2,8 +2,16 @@
   width: 280px;
   background: #ffffff;
   border-radius: 5px;
+  padding: 48px 20px 41px 20px;
+  &__close-btn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
   &__img {
-    width: 280px;
+    width: 240px;
     border-radius: 5px 5px 0px 0px;
   }
 }

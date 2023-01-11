@@ -14,3 +14,5 @@ window.addEventListener('load', e => {
 const gallery = document.querySelector('.gallery');
 
 gallery.addEventListener('click', movieInfoModal);
+
+

@@ -17,8 +17,9 @@ const movieInfoModal = event => {
       <img src="https://image.tmdb.org/t/p/w500//${
         data.poster_path
       }" class="gallery-modal__img"/>
+      <div>
       <h3 class="gallery-modal__title">${data.original_title}</h3>
-      <table>
+      <table class="table">
         <tr class="table-data__row">
           <td class="table-data__name">Vote/Votes</td>
           <td class="table-data__value"><span class="rating">${data.vote_average.toFixed(
@@ -35,7 +36,7 @@ const movieInfoModal = event => {
         </tr>
         <tr>
           <td class="table-data__name">Genre</td>
-          <td class="table-data__value">${data.genre}</td>
+          <td class="table-data__value">genres</td>
         </tr>
       </table>
       <h4 class="gallery-modal__about">ABOUT</h4>
@@ -43,6 +44,7 @@ const movieInfoModal = event => {
       <div class="modal-btns">
         <button class="modal-ls-btn" id="addWatched">ADD TO WATCHED</button>
         <button class="modal-ls-btn" id="addQueue">ADD TO QUEUE</button> 
+      </div>
       </div>
     </div>
 `);

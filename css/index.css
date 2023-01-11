@@ -171,6 +171,11 @@ body {
   line-height: 16px;
   font-size: 12px;
   width: 265px;
+  cursor: pointer;
+}
+.move_gallery__item:hover {
+  transform: scale(1.05);
+  transition: transform ease 0.3s;
 }
 .move_gallery__image {
   width: 100%;
@@ -351,8 +356,8 @@ body {
   color: #000000;
 }
 .gallery-modal__close-btn {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 15px;
   right: 10px;
@@ -377,6 +382,12 @@ body {
   font-weight: 500;
   line-height: 1.6666666667;
   padding: 0 0 21px 0;
+}
+
+.modal-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
 }
 
 .table-data__row:not(:last-child) {
@@ -412,6 +423,7 @@ body {
   height: 44px;
   border-radius: 5px;
   background: transparent;
+  cursor: pointer;
 }
 
 .ls-marked {
@@ -420,6 +432,50 @@ body {
   border: none;
 }
 
+@media screen and (min-width: 768px) {
+  .gallery-modal {
+    width: 618px;
+    display: flex;
+    gap: 32px;
+    padding: 42px 28px 40px 30px;
+  }
+  .gallery-modal__img {
+    width: 264px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .modal-btns {
+    justify-content: left;
+    gap: 15px;
+  }
+  .gallery-modal {
+    width: 882px;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 50px 30px 40px 30px;
+    overflow-y: auto;
+  }
+  .gallery-modal__title {
+    font-size: 30px;
+    line-height: 1.172;
+  }
+  .gallery-modal__img {
+    width: 396px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .gallery-modal__about {
+    padding: 20px 0 10px 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3333333333;
+  }
+  .gallery-modal__overview {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6666666667;
+    padding: 0 0 21px 0;
+  }
+}
 .pagination-container {
   padding: 0 0 25px 0;
   display: flex;

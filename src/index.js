@@ -20,6 +20,8 @@ if (gallery !== null) {
 
 if (library !== null) {
   let watchedArr = getWatched();
-  // console.log(watchedArr);
-  showWatched(watchedArr, library);
+
+  if (watchedArr !== undefined) {
+    showWatched(watchedArr, library);
+  }
 }

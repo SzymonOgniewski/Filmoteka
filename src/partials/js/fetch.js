@@ -12,10 +12,9 @@ async function movieData(movie_id) {
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${token}&language=en-US`
   );
-  if (!response.ok) {
-    throw new Error(response.status);
-  }
-  return await response.json();
+
+  const moveData = await response.json();
+  return moveData;
 }
 
 async function queryData(query, page) {

@@ -1,3 +1,5 @@
+import { movieData, genresData } from './fetch';
+
 const addWatched = moveId => {
   let watchedList = localStorage.getItem('watched');
 
@@ -18,12 +20,20 @@ const addWatched = moveId => {
   }
 };
 
-const getWatched = () => {};
+const getWatched = () => {
+  let watchedList = localStorage.getItem('watched');
+  if (watchedList !== null) {
+    let arr = [];
+    arr = watchedList.split(',');
+    return arr;
+  }
+  return;
+};
 
 const removeWatched = (idsList, moveId) => {
   let arr = idsList;
 
-  filteredArr = arr.filter(e => {
+  let filteredArr = arr.filter(e => {
     return e !== moveId;
   });
 
@@ -56,4 +66,16 @@ const addQueue = moveId => {
 };
 const getQueue = () => {};
 
-export { addWatched, getWatched, addQueue, getQueue };
+const showWatched = (moviesArr, display) => {
+  if (display === null) {
+    return console.log('error: no container to display');
+  }
+  if (moviesArr === null) {
+    console.log('No movies added to library');
+  }
+  moviesArr.forEach(ele => {
+    movieData(ele).then(res => console.log(res));
+  });
+};
+
+export { addWatched, getWatched, addQueue, getQueue, showWatched };

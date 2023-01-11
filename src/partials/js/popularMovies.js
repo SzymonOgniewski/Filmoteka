@@ -4,6 +4,9 @@ import { showPagination } from './pagination';
 const moveList = document.querySelector('.gallery');
 
 const showPopularMovies = page => {
+  if (moveList === null) {
+    return;
+  }
   moveList.textContent = '';
   let markup = '';
   trendingData(page).then(async elm => {

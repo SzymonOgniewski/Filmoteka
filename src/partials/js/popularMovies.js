@@ -21,7 +21,7 @@ const showPopularMovies = page => {
 
       let moveGenresName = [];
       shortGenres.forEach(ids => {
-        for (i = 0; i < genres.length; i++) {
+        for (let i = 0; i < genres.length; i++) {
           if (ids === genres[i].id) {
             moveGenresName.push(genres[i].name);
           }

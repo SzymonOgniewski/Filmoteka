@@ -1,15 +1,23 @@
 import { movieData } from './fetch';
 import { addQueue, addWatched } from './mylibrary';
+import { getWatched } from './mylibrary';
 const basicLightbox = require('basiclightbox');
 import * as basicLightbox from 'basiclightbox';
-let arrW = [315162, 76600, 800815];
-let arrQ = [315162, 76600, 800815];
+let arrW = getWatched();
+console.log(arrW);
+// let arrQ = [315162, 76600, 800815];
 const movieInfoModal = event => {
   event.preventDefault();
 
   if (event.target.parentElement.nodeName === 'LI') {
     const movieId = event.target.parentElement.getAttribute('data-movieid');
     movieData(movieId).then(data => {
+      let genres = [];
+
+      data.genres.forEach(r => {
+        genres.push(r.name);
+      });
+      let genresStr = genres.slice(0, 1).toString().replace(',', ', ');
       const instance = basicLightbox.create(`
       <div class="gallery-modal">
       <button class="gallery-modal__close-btn" id="modal-cb">
@@ -36,7 +44,7 @@ const movieInfoModal = event => {
         </tr>
         <tr>
           <td class="table-data__name">Genre</td>
-          <td class="table-data__value">genres</td>
+          <td class="table-data__value">${genresStr} </td>
         </tr>
       </table>
       <h4 class="gallery-modal__about">ABOUT</h4>
@@ -50,22 +58,36 @@ const movieInfoModal = event => {
 `);
       instance.show();
       const wBtn = document.getElementById('addWatched');
-      const qBtn = document.getElementById('addQueue');
+      // const qBtn = document.getElementById('addQueue');
 
-      if (arrW.includes(parseInt(movieId))) {
+      if (arrW.includes(movieId)) {
+        console.log('yes');
         wBtn.textContent = 'WATCHED';
         wBtn.classList.add('ls-marked');
-      } else {
+      }
+      if (!arrW.includes(movieId)) {
+        console.log('no');
         wBtn.textContent = 'ADD TO WATCHED';
         wBtn.classList.remove('ls-marked');
       }
-      if (arrQ.includes(parseInt(movieId))) {
-        qBtn.textContent = 'QUEUED';
-        qBtn.classList.add('ls-marked');
-      } else {
-        qBtn.textContent = 'ADD TO QUEUE';
-        qBtn.classList.remove('ls-marked');
-      }
+      wBtn.addEventListener('click', e => {
+        wBtn.classList.toggle('ls-marked');
+        const toggleText = () => {
+          if (wBtn.innerHTML === 'WATCHED') {
+            wBtn.innerHTML = 'ADD TO WATCHED';
+          } else {
+            wBtn.innerHTML = 'WATCHED';
+          }
+        };
+        toggleText();
+      });
+      // if (arrQ.includes(parseInt(movieId))) {
+      //   qBtn.textContent = 'QUEUED';
+      //   qBtn.classList.add('ls-marked');
+      // } else {
+      //   qBtn.textContent = 'ADD TO QUEUE';
+      //   qBtn.classList.remove('ls-marked');
+      // }
 
       const closeBtn = document.getElementById('modal-cb');
       closeBtn.addEventListener('click', event => {
@@ -85,52 +107,8 @@ const movieInfoModal = event => {
       addQue.addEventListener('click', e => {
         addQueue(movieId);
       });
-
-      // console.log(addQueue, addWatched);
     });
   }
-  //   if (event.target.nodeName === 'LI') {
-  //     const movieId = event.target.getAttribute('data-movieid');
-  //     movieData(movieId).then(data => {
-  //       const instance = basicLightbox.create(`
-  //       <div class="gallery-modal">
-  //       <img src="https://image.tmdb.org/t/p/w500//${
-  //         data.poster_path
-  //       }" class="gallery-modal__img"/>
-  //       <h3>${data.original_title}</h3>
-  //       <table>
-  //         <tr>
-  //           <td>Vote/Votes</td>
-  //           <td>${data.vote_average.toFixed(2)} / ${data.vote_count}</td>
-  //         </tr>
-  //         <tr>
-  //           <td>Popularity</td>
-  //           <td>${data.popularity}</td>
-  //         </tr>
-  //         <tr>
-  //           <td>Original Title</td>
-  //           <td> ${data.original_title}</td>
-  //         </tr>
-  //         <tr>
-  //           <td>Genre</td>
-  //           <td>${data.genre}</td>
-  //         </tr>
-  //       </table>
-  //       <h4>About</h4>
-  //       <p>${data.overview}</p>
-  //       <div class="modal-btns">
-  //         <button id="addWatched">ADD TO WATCHED</button>
-  //         <button id="addQueue">ADD TO QUEUE</button>
-  //       </div>
-  //     </div>
-  // `);
-  //       instance.show();
-  //       const addWatched = document.querySelector('#addWatched');
-  //       const addQueue = document.querySelector('#addQueue');
-
-  //       console.log(addQueue, addWatched);
-  //     });
-  //   }
 };
 
 export { movieInfoModal };

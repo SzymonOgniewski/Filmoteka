@@ -4,10 +4,8 @@ async function genresData() {
   const response = await fetch(
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${token}&language=en-US`
   );
-  if (!response.ok) {
-    throw new Error(response.status);
-  }
-  return await response.json();
+  const genresObject = await response.json();
+  return genresObject.genres;
 }
 
 async function movieData(movie_id) {

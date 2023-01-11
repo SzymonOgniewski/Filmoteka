@@ -1,7 +1,10 @@
 import { showPopularMovies } from './partials/js/popularMovies';
 import { footerModal } from './partials/js/modal';
 import { movieInfoModal } from './partials/js/movieInfoModal';
-import { getWatched } from './partials/js/mylibrary';
+import { getWatched, showWatched } from './partials/js/mylibrary';
+
+const gallery = document.querySelector('.gallery');
+const library = document.querySelector('.libraryData');
 
 getWatched();
 
@@ -11,8 +14,12 @@ window.addEventListener('load', e => {
   showPopularMovies(1);
 });
 
-const gallery = document.querySelector('.gallery');
+if (gallery !== null) {
+  gallery.addEventListener('click', movieInfoModal);
+}
 
-gallery.addEventListener('click', movieInfoModal);
-
-
+if (library !== null) {
+  let watchedArr = getWatched();
+  // console.log(watchedArr);
+  showWatched(watchedArr, library);
+}

@@ -5,12 +5,17 @@
   padding: 46px 0 43px 0;
   &__nav {
     padding-top: 12px;
+
     &--item {
       color: getColor(text-color-light);
       text-decoration: none;
       font-weight: 500;
       font-size: 12px;
       line-height: calc(14.06 / 12);
+      &:hover {
+        transform: scale(1.03);
+        transition: transform ease 0.3s;
+      }
       &:not(:last-child) {
         margin-right: 39px;
       }
@@ -78,6 +83,10 @@
   height: 20px;
   border: none;
   background: transparent;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform ease 0.3s;
+  }
   &__icon {
     width: 12px;
     height: 12px;

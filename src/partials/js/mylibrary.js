@@ -27,7 +27,8 @@ const getWatched = () => {
     arr = watchedList.split(',');
     return arr;
   }
-  return;
+  watchedList = [];
+  return watchedList;
 };
 
 const removeWatched = (idsList, moveId) => {
@@ -62,8 +63,11 @@ const addQueue = moveId => {
   if (arr.includes(moveId) === false) {
     arr.push(moveId);
     return localStorage.setItem('queue', arr);
+  } else {
+    removeQueue(arr, moveId);
   }
 };
+
 const getQueue = () => {
   let queueList = localStorage.getItem('queue');
   if (queueList !== null) {
@@ -71,7 +75,25 @@ const getQueue = () => {
     arr = queueList.split(',');
     return arr;
   }
-  return;
+  queueList = [];
+  return queueList;
+};
+
+const removeQueue = (idsList, moveId) => {
+  let arr = idsList;
+
+  let filteredArr = arr.filter(e => {
+    return e !== moveId;
+  });
+
+  if (
+    (filteredArr.length === 1 && filteredArr[0].length === 0) ||
+    filteredArr.length === 0
+  ) {
+    return localStorage.removeItem('queue');
+  }
+
+  return localStorage.setItem('queue', filteredArr);
 };
 
 const showWatched = (moviesArr, display) => {

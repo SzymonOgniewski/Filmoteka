@@ -49,8 +49,10 @@ if (queueBtn !== null) {
     showMovies(queuedArr, library);
   });
 }
-inputField.addEventListener('submit', e => {
-  e.preventDefault();
-  const query = searchQuery.value;
-  showSearchMovies(query, 1);
-});
+if (inputField !== null) {
+  inputField.addEventListener('submit', e => {
+    e.preventDefault();
+    const query = searchQuery.value;
+    showSearchMovies(query, 1);
+  });
+}

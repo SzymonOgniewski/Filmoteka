@@ -40,6 +40,10 @@ body {
   font-size: 12px;
   line-height: 1.1716666667;
 }
+.header__nav--item:hover {
+  transform: scale(1.03);
+  transition: transform ease 0.3s;
+}
 .header__nav--item:not(:last-child) {
   margin-right: 39px;
 }
@@ -103,6 +107,10 @@ body {
   height: 20px;
   border: none;
   background: transparent;
+}
+.submit-btn:hover {
+  transform: scale(1.05);
+  transition: transform ease 0.3s;
 }
 .submit-btn__icon {
   width: 12px;
@@ -521,6 +529,7 @@ body {
   font-size: 12px;
   line-height: 1.333;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .pagination-prev {

@@ -1,4 +1,4 @@
-import { showPopularMovies } from './popularMovies';
+import { showPopularMovies } from './popularmovies';
 
 const pagination = document.querySelector('.pagination-container');
 

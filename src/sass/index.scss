@@ -1,11 +1,10 @@
 @import './common';
 @import './utils/vars';
-@import './global-patterns';
+@import './globalpatterns';
 @import './components/header';
 @import './components/gallery';
 @import './components/footer';
-@import './components/myLheader';
-@import './components/footer-modal';
-@import './components/gallery-modal';
+@import './components/mylibraryheader';
+@import './components/footermodal';
+@import './components/gallerymodal';
 @import './components/pagination';
-

@@ -4,7 +4,7 @@ import { getWatched, getQueue } from './mylibrary';
 const basicLightbox = require('basiclightbox');
 import * as basicLightbox from 'basiclightbox';
 
-const movieInfoModal = event => {
+const movieinfomodal = event => {
   event.preventDefault();
 
   if (event.target.parentElement.nodeName === 'LI') {
@@ -112,4 +112,4 @@ const movieInfoModal = event => {
   }
 };
 
-export { movieInfoModal };
+export { movieinfomodal };

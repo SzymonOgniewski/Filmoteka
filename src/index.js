@@ -1,7 +1,7 @@
 import { showSearchMovies } from './partials/js/search';
-import { showPopularMovies } from './partials/js/popularMovies';
+import { showPopularMovies } from './partials/js/popularmovies';
 import { footerModal } from './partials/js/modal';
-import { movieInfoModal } from './partials/js/movieInfoModal';
+import { movieinfomodal } from './partials/js/movieinfomodal';
 import { getWatched, getQueue, showMovies } from './partials/js/mylibrary';
 
 const gallery = document.querySelector('.gallery');
@@ -20,7 +20,7 @@ window.addEventListener('load', e => {
 });
 
 if (gallery !== null) {
-  gallery.addEventListener('click', movieInfoModal);
+  gallery.addEventListener('click', movieinfomodal);
 }
 
 if (library !== null) {
@@ -29,7 +29,7 @@ if (library !== null) {
   if (watchedArr !== undefined) {
     showMovies(watchedArr, library);
   }
-  library.addEventListener('click', movieInfoModal);
+  library.addEventListener('click', movieinfomodal);
 }
 if (watchedBtn !== null) {
   watchedBtn.classList.add('ls-marked');

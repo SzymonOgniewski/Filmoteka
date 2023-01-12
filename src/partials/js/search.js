@@ -1,5 +1,5 @@
 import { queryData, genresData } from './fetch';
-import { showSearchPagination } from './searchPagination';
+import { showSearchPagination } from './searchpagination';
 
 const moveList = document.querySelector('.gallery');
 

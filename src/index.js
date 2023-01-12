@@ -1,3 +1,4 @@
+import { showSearchMovies } from './partials/js/search';
 import { showPopularMovies } from './partials/js/popularMovies';
 import { footerModal } from './partials/js/modal';
 import { movieInfoModal } from './partials/js/movieInfoModal';
@@ -28,6 +29,16 @@ if (library !== null) {
   }
 }
 
+
+const inputField = document.querySelector('.search-form');
+
+const searchQuery = document.querySelector('.search-form__input');
+inputField.addEventListener('submit', e => {
+  event.preventDefault();
+  const query = searchQuery.value;
+  showSearchMovies(query, 1);
+});
+
 if (watchedBtn !== null) {
   let watchedArr = getWatched();
   watchedBtn.addEventListener('click', e => {
@@ -41,3 +52,4 @@ if (queueBtn !== null) {
     showMovies(queuedArr, library);
   });
 }
+

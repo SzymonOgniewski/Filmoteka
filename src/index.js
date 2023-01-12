@@ -3,6 +3,8 @@ import { showPopularMovies } from './partials/js/popularMovies';
 import { footerModal } from './partials/js/modal';
 import { movieInfoModal } from './partials/js/movieInfoModal';
 import { getWatched, getQueue, showMovies } from './partials/js/mylibrary';
+import { Notify } from 'notiflix';
+import { movies } from './partials/js/search';
 
 const gallery = document.querySelector('.gallery');
 const library = document.querySelector('.libraryData');
@@ -30,16 +32,19 @@ if (library !== null) {
   library.addEventListener('click', movieInfoModal);
 }
 
-
+// searchQuery
 const inputField = document.querySelector('.search-form');
 
 const searchQuery = document.querySelector('.search-form__input');
+
 inputField.addEventListener('submit', e => {
   event.preventDefault();
   const query = searchQuery.value;
+  // Notify.success(`Hey! We found some ${query} movies you may like!`); //nie działa to jak trzeba gdy zrobimy przypadek z warningiem
   showSearchMovies(query, 1);
 });
 
+// watchedbtn
 if (watchedBtn !== null) {
   watchedBtn.classList.add('ls-marked');
   let watchedArr = getWatched();
@@ -58,4 +63,3 @@ if (queueBtn !== null) {
     showMovies(queuedArr, library);
   });
 }
-

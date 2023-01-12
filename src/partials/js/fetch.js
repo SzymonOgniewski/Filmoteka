@@ -1,3 +1,4 @@
+import { Notify } from 'notiflix';
 const token = 'dd32b08009b8c26db83a645989914c74';
 
 async function genresData() {
@@ -22,7 +23,8 @@ async function queryData(query, page) {
     `https://api.themoviedb.org/3/search/movie?api_key=${token}&query=${query}&page=${page}&language=en-US`
   );
   if (!response.ok) {
-    throw new Error(response.status);
+    // throw new Error(response.status);
+    throw new Notify.failure('Unfortunetly your searching area is empty :(');
   }
   return await response.json();
 }

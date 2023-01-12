@@ -1,7 +1,11 @@
 import { queryData, genresData } from './fetch';
 import { showSearchPagination } from './searchPagination';
+import { Notify } from 'notiflix';
+import { showPopularMovies } from './popularMovies';
 
 const moveList = document.querySelector('.gallery');
+const searchQuery = document.querySelector('.search-form__input');
+const query = searchQuery.value;
 
 let page = 1;
 const showSearchMovies = (query, page) => {
@@ -11,6 +15,12 @@ const showSearchMovies = (query, page) => {
   queryData(query, page).then(async elm => {
     //  let searchedVid = inputField.value.trim();
     let movies = elm.results;
+    if (movies.length == 0) {
+      Notify.warning(
+        `We cant match any videos to ${query} :( Here are some popular vids you may like`
+      );
+      showPopularMovies(1);
+    }
     let currentpage = page;
     let totalPages = elm.total_pages;
     let genres = await genresData();
@@ -54,3 +64,5 @@ const showSearchMovies = (query, page) => {
 };
 
 export { showSearchMovies };
+export { moveList };
+export { movies };

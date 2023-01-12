@@ -8,6 +8,8 @@ const gallery = document.querySelector('.gallery');
 const library = document.querySelector('.libraryData');
 const watchedBtn = document.querySelector('.library-btn__watched');
 const queueBtn = document.querySelector('.library-btn__queued');
+const inputField = document.querySelector('.search-form');
+const searchQuery = document.querySelector('.search-form__input');
 
 getWatched();
 
@@ -29,17 +31,6 @@ if (library !== null) {
   }
   library.addEventListener('click', movieInfoModal);
 }
-
-
-const inputField = document.querySelector('.search-form');
-
-const searchQuery = document.querySelector('.search-form__input');
-inputField.addEventListener('submit', e => {
-  event.preventDefault();
-  const query = searchQuery.value;
-  showSearchMovies(query, 1);
-});
-
 if (watchedBtn !== null) {
   watchedBtn.classList.add('ls-marked');
   let watchedArr = getWatched();
@@ -58,4 +49,8 @@ if (queueBtn !== null) {
     showMovies(queuedArr, library);
   });
 }
-
+inputField.addEventListener('submit', e => {
+  e.preventDefault();
+  const query = searchQuery.value;
+  showSearchMovies(query, 1);
+});

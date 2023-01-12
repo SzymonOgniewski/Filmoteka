@@ -45,7 +45,7 @@ const showPopularMovies = page => {
      <div class="move_gallery__title">${elm.title}</div>
      <div class="move_gallery__genres">${moveGenresName
        .toString()
-       .replaceAll(',', ', ')} | ${elm.release_date}</div>
+       .replaceAll(',', ', ')} | ${elm.release_date.slice(0, 4)}</div>
      </li>`;
     });
 

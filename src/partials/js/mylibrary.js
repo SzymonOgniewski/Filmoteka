@@ -17,6 +17,19 @@ const addWatched = moveId => {
     arr.push(moveId);
     return localStorage.setItem('watched', arr);
   } else {
+    const url = window.location.href.split('/');
+    const lastSegment = url.pop();
+
+    if (lastSegment === 'mylibrary.html') {
+      const lib = document.querySelectorAll('.move_gallery__item');
+      lib.forEach(res => {
+        if (res.dataset.movieid === moveId) {
+          res.remove();
+          removeWatched(arr, moveId);
+        }
+      });
+    }
+
     removeWatched(arr, moveId);
   }
 };
@@ -65,6 +78,18 @@ const addQueue = moveId => {
     arr.push(moveId);
     return localStorage.setItem('queue', arr);
   } else {
+    const url = window.location.href.split('/');
+    const lastSegment = url.pop();
+
+    if (lastSegment === 'mylibrary.html') {
+      const lib = document.querySelectorAll('.move_gallery__item');
+      lib.forEach(res => {
+        if (res.dataset.movieid === moveId) {
+          res.remove();
+          removeQueue(arr, moveId);
+        }
+      });
+    }
     removeQueue(arr, moveId);
   }
 };
@@ -99,7 +124,7 @@ const removeQueue = (idsList, moveId) => {
 
 const showMovies = (moviesArr, display, page = null) => {
   display.textContent = '';
-  console.log(moviesArr);
+  // console.log(moviesArr);
 
   let currentPage = 1;
 
@@ -113,7 +138,7 @@ const showMovies = (moviesArr, display, page = null) => {
   let startSlice = endSlice - hitsPerPage;
 
   let totalPages = Math.ceil(moviesArr.length / hitsPerPage);
-  console.log(totalPages);
+  // console.log(totalPages);
 
   showLibraryPagination(currentPage, totalPages, moviesArr, display);
 
@@ -125,7 +150,7 @@ const showMovies = (moviesArr, display, page = null) => {
     console.log('No movies added to library');
   }
   moviesArr = moviesArr.slice(startSlice, endSlice);
-  console.log(moviesArr);
+  // console.log(moviesArr);
 
   moviesArr.forEach(async elm => {
     let markup = '';

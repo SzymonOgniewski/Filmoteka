@@ -1,4 +1,5 @@
-import { movieData, genresData } from './fetch';
+import { movieData } from './fetch';
+import { showLibraryPagination } from './librarypagination';
 
 const addWatched = moveId => {
   let watchedList = localStorage.getItem('watched');
@@ -96,8 +97,25 @@ const removeQueue = (idsList, moveId) => {
   return localStorage.setItem('queue', filteredArr);
 };
 
-const showMovies = (moviesArr, display) => {
+const showMovies = (moviesArr, display, page = null) => {
   display.textContent = '';
+  console.log(moviesArr);
+
+  let currentPage = 1;
+
+  if (page !== null) {
+    currentPage = page;
+  }
+
+  let hitsPerPage = 6;
+
+  let endSlice = currentPage * hitsPerPage;
+  let startSlice = endSlice - hitsPerPage;
+
+  let totalPages = Math.ceil(moviesArr.length / hitsPerPage);
+  console.log(totalPages);
+
+  showLibraryPagination(currentPage, totalPages, moviesArr, display);
 
   if (display === null) {
     return console.log('error: no container to display');
@@ -106,6 +124,8 @@ const showMovies = (moviesArr, display) => {
   if (moviesArr === null) {
     console.log('No movies added to library');
   }
+  moviesArr = moviesArr.slice(startSlice, endSlice);
+  console.log(moviesArr);
 
   moviesArr.forEach(async elm => {
     let markup = '';
@@ -125,9 +145,14 @@ const showMovies = (moviesArr, display) => {
     }
 
     markup += `<li class="move_gallery__item" data-movieid="${data.id}">
-    <img class="move_gallery__image" src="${data.poster_path}" width="265" height="398">
+    <img class="move_gallery__image" src="${
+      data.poster_path
+    }" width="265" height="398">
      <div class="move_gallery__title">${data.title}</div>
-     <div class="move_gallery__genres">${genresStr} | ${data.release_date}</div>
+     <div class="move_gallery__genres">${genresStr} | ${data.release_date.slice(
+      0,
+      4
+    )}</div>
      </li>`;
 
     display.insertAdjacentHTML('beforeend', markup);

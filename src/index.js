@@ -27,6 +27,7 @@ if (library !== null) {
   if (watchedArr !== undefined) {
     showMovies(watchedArr, library);
   }
+  library.addEventListener('click', movieInfoModal);
 }
 
 
@@ -40,8 +41,11 @@ inputField.addEventListener('submit', e => {
 });
 
 if (watchedBtn !== null) {
+  watchedBtn.classList.add('ls-marked');
   let watchedArr = getWatched();
   watchedBtn.addEventListener('click', e => {
+    watchedBtn.classList.add('ls-marked');
+    queueBtn.classList.remove('ls-marked');
     showMovies(watchedArr, library);
   });
 }
@@ -49,6 +53,8 @@ if (watchedBtn !== null) {
 if (queueBtn !== null) {
   let queuedArr = getQueue();
   queueBtn.addEventListener('click', e => {
+    queueBtn.classList.add('ls-marked');
+    watchedBtn.classList.remove('ls-marked');
     showMovies(queuedArr, library);
   });
 }

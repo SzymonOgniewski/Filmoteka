@@ -2,7 +2,12 @@ import { showSearchMovies } from './partials/js/search';
 import { showPopularMovies } from './partials/js/popularMovies';
 import { footerModal } from './partials/js/modal';
 import { movieInfoModal } from './partials/js/movieInfoModal';
-import { getWatched } from './partials/js/mylibrary';
+import { getWatched, getQueue, showMovies } from './partials/js/mylibrary';
+
+const gallery = document.querySelector('.gallery');
+const library = document.querySelector('.libraryData');
+const watchedBtn = document.querySelector('.library-btn__watched');
+const queueBtn = document.querySelector('.library-btn__queued');
 
 getWatched();
 
@@ -12,9 +17,18 @@ window.addEventListener('load', e => {
   showPopularMovies(1);
 });
 
-const gallery = document.querySelector('.gallery');
+if (gallery !== null) {
+  gallery.addEventListener('click', movieInfoModal);
+}
 
-gallery.addEventListener('click', movieInfoModal);
+if (library !== null) {
+  let watchedArr = getWatched();
+
+  if (watchedArr !== undefined) {
+    showMovies(watchedArr, library);
+  }
+}
+
 
 const inputField = document.querySelector('.search-form');
 
@@ -24,3 +38,18 @@ inputField.addEventListener('submit', e => {
   const query = searchQuery.value;
   showSearchMovies(query, 1);
 });
+
+if (watchedBtn !== null) {
+  let watchedArr = getWatched();
+  watchedBtn.addEventListener('click', e => {
+    showMovies(watchedArr, library);
+  });
+}
+
+if (queueBtn !== null) {
+  let queuedArr = getQueue();
+  queueBtn.addEventListener('click', e => {
+    showMovies(queuedArr, library);
+  });
+}
+

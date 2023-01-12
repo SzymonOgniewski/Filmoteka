@@ -12,8 +12,8 @@
     color: getColor(text-color-dark);
   }
   &__close-btn {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     top: 15px;
     right: 10px;
@@ -40,7 +40,11 @@
     padding: 0 0 21px 0;
   }
 }
-
+.modal-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+}
 .table-data {
   &__row:not(:last-child) {
     padding: 0 0 10px 0;
@@ -76,9 +80,56 @@
   height: 44px;
   border-radius: 5px;
   background: transparent;
+  cursor: pointer;
 }
 .ls-marked {
   background-color: getColor(brand-color-orange);
   color: getColor(text-color-light);
   border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery-modal {
+    width: 618px;
+    display: flex;
+    gap: 32px;
+    padding: 42px 28px 40px 30px;
+    &__img {
+      width: 264px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .modal-btns {
+    justify-content: left;
+    gap: 15px;
+  }
+  .gallery-modal {
+    width: 882px;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 50px 30px 40px 30px;
+    overflow-y: auto;
+    &__title {
+      font-size: 30px;
+      line-height: calc(35.16 / 30);
+    }
+    &__img {
+      width: 396px;
+      border-radius: 5px 5px 0px 0px;
+    }
+    &__about {
+      padding: 20px 0 10px 0;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: calc(16 / 12);
+    }
+    &__overview {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: calc(20 / 12);
+      padding: 0 0 21px 0;
+    }
+  }
 }

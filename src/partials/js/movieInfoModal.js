@@ -26,10 +26,8 @@ const movieInfoModal = event => {
         watchedBtn = `<button class="modal-ls-btn" id="addWatched">ADD TO WATCHED</button>`;
       }
       if (arrQueue.includes(movieId)) {
-        console.log('yesQ');
-        queueBtn = `<button class="modal-ls-btn ls-marked" id="addWatched">QUEUED</button>`;
+        queueBtn = `<button class="modal-ls-btn ls-marked" id="addQueue">QUEUED</button>`;
       } else {
-        console.log('noQ');
         queueBtn = `<button class="modal-ls-btn" id="addQueue">ADD TO QUEUE</button>`;
       }
 
@@ -74,33 +72,10 @@ const movieInfoModal = event => {
       `
       );
       instance.show();
-      const wBtn = document.getElementById('addWatched');
-      const qBtn = document.getElementById('addQueue');
-
-      wBtn.addEventListener('click', e => {
-        wBtn.classList.toggle('ls-marked');
-        const toggleText = () => {
-          if (wBtn.innerHTML === 'WATCHED') {
-            wBtn.innerHTML = 'ADD TO WATCHED';
-          } else {
-            wBtn.innerHTML = 'WATCHED';
-          }
-        };
-        toggleText();
-      });
-      qBtn.addEventListener('click', e => {
-        qBtn.classList.toggle('ls-marked');
-        const toggleText = () => {
-          if (qBtn.innerHTML === 'QUEUED') {
-            qBtn.innerHTML = 'ADD TO QUEUE';
-          } else {
-            qBtn.innerHTML = 'QUEUED';
-          }
-        };
-        toggleText();
-      });
-
       const closeBtn = document.getElementById('modal-cb');
+      const addWat = document.querySelector('#addWatched');
+      const addQue = document.querySelector('#addQueue');
+
       closeBtn.addEventListener('click', event => {
         instance.close();
       });
@@ -109,14 +84,29 @@ const movieInfoModal = event => {
         if (instance.visible()) instance.close();
       });
 
-      const addWat = document.querySelector('#addWatched');
-      const addQue = document.querySelector('#addQueue');
-
       addWat.addEventListener('click', e => {
         addWatched(movieId);
+        addWat.classList.toggle('ls-marked');
+        const toggleText = () => {
+          if (addWat.innerHTML === 'WATCHED') {
+            addWat.innerHTML = 'ADD TO WATCHED';
+          } else {
+            addWat.innerHTML = 'WATCHED';
+          }
+        };
+        toggleText();
       });
       addQue.addEventListener('click', e => {
         addQueue(movieId);
+        addQue.classList.toggle('ls-marked');
+        const toggleText = () => {
+          if (addQue.innerHTML === 'QUEUED') {
+            addQue.innerHTML = 'ADD TO QUEUE';
+          } else {
+            addQue.innerHTML = 'QUEUED';
+          }
+        };
+        toggleText();
       });
     });
   }

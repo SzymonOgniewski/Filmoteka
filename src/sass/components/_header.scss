@@ -5,6 +5,7 @@
   padding: 46px 0 43px 0;
   &__nav {
     padding-top: 12px;
+    display: flex;
     &--item {
       color: getColor(text-color-light);
       text-decoration: none;
@@ -13,7 +14,7 @@
       line-height: calc(14.06 / 12);
       &:hover {
         transform: scale(1.03);
-        transition: transform ease 0.3s;
+        transition: transform 0.3s ease;
       }
       &:not(:last-child) {
         margin-right: 39px;
@@ -28,6 +29,10 @@
     }
     &--name {
       display: none;
+      &:hover {
+        color: getColor(brand-color-orange);
+        transition: color 0.3s ease;
+      }
     }
   }
 }

@@ -13,7 +13,7 @@
       font-size: 12px;
       line-height: calc(14.06 / 12);
       &:hover {
-        transform: scale(1.03);
+        transform: scale(1.1);
         transition: transform 0.3s ease;
       }
       &:not(:last-child) {
@@ -26,6 +26,10 @@
     &--logo {
       width: 24px;
       height: 24px;
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
     }
     &--name {
       display: none;

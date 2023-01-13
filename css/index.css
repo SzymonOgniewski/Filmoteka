@@ -32,6 +32,7 @@ body {
 }
 .header__nav {
   padding-top: 12px;
+  display: flex;
 }
 .header__nav--item {
   color: #ffffff;
@@ -41,8 +42,8 @@ body {
   line-height: 1.1716666667;
 }
 .header__nav--item:hover {
-  transform: scale(1.03);
-  transition: transform ease 0.3s;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 .header__nav--item:not(:last-child) {
   margin-right: 39px;
@@ -54,8 +55,16 @@ body {
   width: 24px;
   height: 24px;
 }
+.header__brand--logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
 .header__brand--name {
   display: none;
+}
+.header__brand--name:hover {
+  color: #ff6b01;
+  transition: color 0.3s ease;
 }
 
 .current {
@@ -183,8 +192,10 @@ body {
   cursor: pointer;
 }
 .move_gallery__item:hover {
+  border-radius: 5px;
   transform: scale(1.05);
   transition: transform ease 0.3s;
+  box-shadow: 0px 0px 17px 0px rgb(144, 144, 148);
 }
 .move_gallery__image {
   width: 100%;
@@ -194,6 +205,7 @@ body {
   padding: 0 0 10px 0;
 }
 .move_gallery__title {
+  padding: 0 0 0 5px;
   text-transform: uppercase;
   white-space: nowrap;
   width: 265px;
@@ -201,6 +213,7 @@ body {
   text-overflow: ellipsis;
 }
 .move_gallery__genres {
+  padding: 0 0 0 5px;
   color: #ff6b08;
 }
 
@@ -254,6 +267,10 @@ body {
   background: transparent;
   border: solid 1px #ffffff;
   cursor: pointer;
+}
+.library-btn:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .library-background {
@@ -329,6 +346,16 @@ body {
   cursor: pointer;
 }
 
+.gh-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.gh-icon:hover {
+  fill: #ff6b01;
+  transition: fill 0.3s ease;
+}
+
 .contributors-list {
   list-style: none;
   display: flex;
@@ -336,10 +363,16 @@ body {
   gap: 20px;
 }
 .contributors-list__item {
-  border-bottom: 1px solid #ff6b01;
+  padding: 5px;
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  gap: 3px;
+  align-items: center;
+  justify-content: space-between;
+}
+.contributors-list__item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 30px 0px rgb(78, 78, 80);
+  transition: ease 0.5s;
 }
 .contributors-list__item--name {
   font-size: 24px;
@@ -442,6 +475,10 @@ body {
   background: transparent;
   cursor: pointer;
 }
+.modal-ls-btn:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
 
 .ls-marked {
   background-color: #ff6b01;
@@ -535,6 +572,11 @@ body {
   line-height: 1.333;
   background-color: transparent;
   cursor: pointer;
+}
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px 0px rgb(144, 144, 148);
+  transition: all 0.3s ease;
 }
 
 .pagination-prev {

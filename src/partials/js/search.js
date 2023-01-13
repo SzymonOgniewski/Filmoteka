@@ -14,7 +14,7 @@ const showSearchMovies = (query, page) => {
     .then(async elm => {
       //  let searchedVid = inputField.value.trim();
 
-      if (elm.result.length === 0) {
+      if (elm.results.length === 0) {
         Notiflix.Notify.failure(
           `Please enter valid name, loaded trending movies`
         );
@@ -62,6 +62,7 @@ const showSearchMovies = (query, page) => {
       moveList.insertAdjacentHTML('beforeend', markup);
     })
     .catch(error => {
+      console.log(error);
       Notiflix.Notify.failure(
         `Please enter valid name, loaded trending movies`
       );

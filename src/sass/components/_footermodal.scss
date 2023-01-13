@@ -37,16 +37,31 @@
     cursor: pointer;
   }
 }
+.gh-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  &:hover {
+    fill: getColor(brand-color-orange);
+    transition: fill 0.3s ease;
+  }
+}
 .contributors-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
   &__item {
-    border-bottom: 1px solid getColor(brand-color-orange);
+    padding: 5px;
+    border-radius: 5px;
     display: flex;
-    flex-direction: column;
-    gap: 3px;
+    align-items: center;
+    justify-content: space-between;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 30px 0px rgba(78, 78, 80, 1);
+      transition: ease 0.5s;
+    }
     &--name {
       font-size: 24px;
       color: black;

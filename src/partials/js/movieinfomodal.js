@@ -31,14 +31,19 @@ const movieinfomodal = event => {
         queueBtn = `<button class="modal-ls-btn" id="addQueue">ADD TO QUEUE</button>`;
       }
 
+      if (data.poster_path === null) {
+        data.poster_path =
+          'http://www2.kanazawa-it.ac.jp/moriken/Student/Noimg.jpg';
+      } else {
+        data.poster_path = `https://image.tmdb.org/t/p/w500//${data.poster_path}`;
+      }
+
       const instance = basicLightbox.create(
         `
       <div class="gallery-modal">
       <button class="gallery-modal__close-btn" id="modal-cb">
         </button>
-      <img src="https://image.tmdb.org/t/p/w500//${
-        data.poster_path
-      }" class="gallery-modal__img"/>
+      <img src="${data.poster_path}" class="gallery-modal__img"/>
       <div>
       <h3 class="gallery-modal__title">${data.original_title}</h3>
       <table class="table">

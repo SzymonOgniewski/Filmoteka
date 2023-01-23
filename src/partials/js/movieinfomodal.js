@@ -11,7 +11,7 @@ const movieinfomodal = event => {
     const movieId = event.target.parentElement.getAttribute('data-movieid');
     movieData(movieId).then(data => {
       let genres = [];
-    
+
       data.genres.forEach(r => {
         genres.push(r.name);
       });

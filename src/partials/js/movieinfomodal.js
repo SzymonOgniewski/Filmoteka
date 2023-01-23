@@ -11,7 +11,7 @@ const movieinfomodal = event => {
     const movieId = event.target.parentElement.getAttribute('data-movieid');
     movieData(movieId).then(data => {
       let genres = [];
-
+      console.log(data);
       data.genres.forEach(r => {
         genres.push(r.name);
       });
@@ -45,7 +45,7 @@ const movieinfomodal = event => {
         </button>
       <img src="${data.poster_path}" class="gallery-modal__img"/>
       <div>
-      <h3 class="gallery-modal__title">${data.original_title}</h3>
+      <h3 class="gallery-modal__title">${data.title}</h3>
       <table class="table">
         <tr class="table-data__row">
           <td class="table-data__name">Vote/Votes</td>

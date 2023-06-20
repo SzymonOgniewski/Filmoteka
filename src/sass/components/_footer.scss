@@ -4,6 +4,9 @@
   height: 100px;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
   &__content {
     font-size: 14px;
     line-height: calc(16.41 / 14);
